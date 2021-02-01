@@ -60,7 +60,7 @@ func ReturnHostname(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		hostname = "Unknown"
 	}
-	hostnameString := "Hostname: " + hostname
+	hostnameString := "Hostname changed: " + hostname
 	_, err = w.Write([]byte(hostnameString + "\n"))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
